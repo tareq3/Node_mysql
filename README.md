@@ -12,5 +12,5 @@ and two table init:
     
 ## Users: 
 ```
-CREATE TABLE users ( id smallint unsigned not null auto_increment, name varchar(20)  null,email varchar(25) not null, token varchar(255) null,  constraint pk_example primary key (id) );
+CREATE TABLE users ( id smallint unsigned not null auto_increment, name varchar(20)  null,email varchar(25) not null, password varchar(255) not null, token varchar(255) null,  constraint pk_example primary key (id) );
 ```
