@@ -23,3 +23,9 @@ CREATE TABLE users ( id smallint unsigned not null auto_increment, name varchar(
 
 CREATE TABLE postss ( id smallint unsigned not null auto_increment, title varchar(20)  null,body varchar(255) null,  constraint pk_example primary key (id) );
 ```
+
+
+postman collection: 
+```
+https://www.getpostman.com/collections/ce2666cf58f0696ae435
+```
