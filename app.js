@@ -73,11 +73,15 @@ function validateUser(req, res, next) {
 
         }
     );
-} //public route
-app.use('/users', userRouter);
+}
+
+
+
+//public route
+app.use('/api/users', userRouter);
 
 //private route
-app.use('/posts', validateUser, postRouter);
+app.use('/api/posts', validateUser, postRouter);
 
 
 
@@ -97,7 +101,7 @@ app.post('/api/login', (req, res) => {
                 u_email: req.query.email,
                 u_pass: req.query.pass
             }
-        }, 'secretkey', (err, token) => {
+        }, req.app.get["secretKey"],{expiresIn: '100y'}, (err, token) => {
             res.json({
                 token
             });

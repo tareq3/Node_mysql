@@ -5,14 +5,14 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: '',
-    database: 'node_mysql_db'
+    password: '123456',
+    database: 'post_db'
 });
 
 //Connect  
 connection.connect((err) => {
     if (err) {
-        console.log('Database Connetion failed:' + e);
+        console.log('Database Connetion failed:' + err);
         throw err;
     }
     console.log('Mysql Connected');
