@@ -1,0 +1,28 @@
+version: '3'
+services:
+  app:
+    container_name: docker-node-mysql
+    restart: always
+    build: .
+
+    ports:
+      - '4000:4000'
+    links:
+      - mysql1
+  mysql1:
+    container_name: mysql1
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_DATABASE: post_db
+      MYSQL_USER: tareq
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+      - db_data:/var/lib/mysql
+    ports:
+      - '3307:3306'
+
+volumes:
+  db_data:

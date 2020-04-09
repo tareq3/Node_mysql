@@ -3,8 +3,9 @@ const mysql = require('mysql2');
 //vmserver root password is : Rakib@72542
 //Create connection
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
+    host: "mysql1",
+    port: '3306',
+    user: "tareq",
     password: '123456',
     database: 'post_db'
 });
